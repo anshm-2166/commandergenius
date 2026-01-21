@@ -107,3 +107,9 @@ jobs:
           name: ${{env.APP_NAME}}-debug
           path: upload/*.apk
           if-no-files-found: error
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Source-Code
+          path: project
+          if-no-files-found: error
