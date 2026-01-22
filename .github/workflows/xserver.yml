@@ -101,6 +101,7 @@ jobs:
         run: |
           mkdir -p upload/
           find . -name "*.apk" -type f -exec cp {} upload/ \;
+          sudo tar cvjf project.tar project
 
       - uses: actions/upload-artifact@v4
         with:
@@ -111,5 +112,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Source-Code
-          path: project
+          path: project.tar
           if-no-files-found: error
